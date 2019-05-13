@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="ventas.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
+	<title></title>
+</head>
+<body background="imagenes/iconoc/fondo.png">
+	<nav id="header" class="navbar navbar-expand-lg navbar-dark bg-black sticky-top">
+  <div class="container">
+      <a class="navbar-brand" href="menusecre.html">
+        <img src="imagenes/iconoc/logo.png" alt="platzi logo">
+        Inicio
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#main"> <span class="sr-only">La conferencia</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="ventassecre.html">   Ventas</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="productossecre.html">   Productos</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="proveedoressecre.html">   Proveedores</a>
+      </li>
+  </div>
+</nav>
+
+<div class="container">
+	<div class="row">
+		<div class="col-12 text-right">
+			<a href="login.html">
+				<button type="button" class="btn btn-principal">Salir</button>
+			</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 text-center">
+			<h1>Proveedores</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 col-lg-3">
+			<form>
+				<div class="form-row">
+					<div class="col-12 col-lg-4 form-group">
+						<input type="text" name="" class="form-control" placeholder="Codigo">
+					</div>
+					<div class="col-12 col-lg-4 form-group">
+						<button type="button" class="btn btn-principal2">Buscar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 col-lg-12">
+			<form>
+				<div class="form-row">
+					<div class="form-group col-12 col-lg-6">
+						<input type="text" name="" class="form-control" placeholder="Empresa">
+					</div>
+					<div class="form-group col-12 col-lg-6">
+						<input type="text" name="" class="form-control" placeholder="Telefono">
+					</div>
+					<div class="form-group col-12 col-lg-6">
+						<input type="text" name="" class="form-control" placeholder="Nombre proveedor">
+					</div>
+					<div class="form-group col-12 col-lg-6">
+						<input type="text" name="" class="form-control" placeholder="Email">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 col-lg-12">
+			<form>
+				<div class="form-row">
+					<div class="form-group col-12 col-lg-2">
+						<button type="button" class="btn btn-principal2 text-right" data-toggle="modal" data-target="#registrar">Guardar</button>
+					</div>
+					<div class="form-group col-12 col-lg-2">
+						<button type="button" class="btn btn-principal2 text-right" data-toggle="modal" data-target="#Modificar">Modificar</button>
+					</div>
+					<div class="form-group col-12 col-lg-2">
+						<button type="button" class="btn btn-principal2 text-right" data-toggle="modal" data-target="#eliminar">Eliminar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+			<div class="col-12">
+				<form>
+					<div class="form-row">
+						<div class="form-group col-12 col-lg-2 text-right">
+							<input type="text" name="" class="form-control" placeholder="Nombre">
+						</div>
+						<div class="form-group col-12 col-lg-2 text-left">
+							<button type="button" class="btn btn-principal2 text-right">Buscar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 col-lg-12">
+				<table border="1px">
+					<tr|><td>Codigo</td><td>Empresa</td><td>Nombre proveedor</td><td>Telefono</td><td>Email</td></tr>
+					<tr><td>1</td><td>Nike</td><td>Miguel Ruvalcaba</td><td>4928001546</td><td>MIKE@gmail.com</td></tr>
+					<tr><td>2</td><td>Adidas</td><td>Jose Perez</td><td>4927001232</td><td>pepe@gmail.com</td></tr>
+					<tr><td>3</td><td>Puma</td><td>Ramiro Sandoval</td><td>3467001589</td><td>ramiro@gmail.com</td></tr>
+					<tr><td>4</td><td>Nike</td><td>Luis Martinez</td><td>3468005969</td><td>luis@gmail.com</td></tr>
+					<tr><td>5</td><td>Pirma</td><td>Pedro Fuentes</td><td>4927001259</td><td>pedro@gmail.com</td></tr>
+				</table>
+			</div>
+		</div>
+</div>
+<!--Modal-->
+            <div class="modal fade" id="registrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Proveedores</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                    <div class="modal-body">
+                      <p>
+                      	proveedor agregado
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-principal2">Aceptar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--Modal-->
+            <div class="modal fade" id="Modificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Proveedores</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                    <div class="modal-body">
+                      <p>
+                      	proveedor modificado
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-principal2">Aceptar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--Modal-->
+            <div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Proveedores</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                    <div class="modal-body">
+                      <p>
+                      	proveedor eliminado
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-principal2">Aceptar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

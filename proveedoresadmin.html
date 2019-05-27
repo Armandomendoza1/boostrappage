@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="ventas.css">
     <link rel="stylesheet" type="text/css" href="login.css">
+     <link rel="stylesheet" type="text/css" href="menu.css">
 	<title></title>
 </head>
 <body background="imagenes/iconoc/fondo.png">
@@ -34,7 +35,7 @@
         <a class="nav-link" href="productosadmin.html">   Productos</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="proveedoreadmin.html">   Proveedores</a>
+        <a class="nav-link" href="proveedoresadmin.html">   Proveedores</a>
       </li>
        <li class="nav-item">
         <a class="nav-link text-platzi" href="usuariosadmin.html">   Usuarios</a>
@@ -48,7 +49,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12 text-right">
-			<a href="login.html">
+			<a href="index.html">
 				<button type="button" class="btn btn-principal">Salir</button>
 			</a>
 		</div>
@@ -60,13 +61,33 @@
 	</div>
 	<div class="row">
 		<div class="col-12 col-lg-3">
-			<form>
+			<form name="bus">
 				<div class="form-row">
 					<div class="col-12 col-lg-4 form-group">
-						<input type="text" name="" class="form-control" placeholder="Codigo">
+						<input type="text" name="codigo" class="form-control" placeholder="Codigo" onchange="cambiobuscar(this)" onkeyup="cambiobuscar(this)">
 					</div>
 					<div class="col-12 col-lg-4 form-group">
-						<button type="button" class="btn btn-principal2">Buscar</button>
+						<button type="button" class="btn btn-principal2" onclick="buscar()">Buscar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 col-lg-12">
+			<form name="fprov" action="proveedoresadmin.html" method="get">
+				<div class="form-row">
+					<div class="form-group col-12 col-lg-6">
+						<input type="text" name="empresa" class="form-control" placeholder="Empresa" onchange="cambio(this)" onkeyup="cambio(this)">
+					</div>
+					<div class="form-group col-12 col-lg-6">
+						<input type="text" name="telefono" class="form-control" placeholder="Telefono" onchange="cambio2(this)" onkeyup="cambio2(this)">
+					</div>
+					<div class="form-group col-12 col-lg-6">
+						<input type="text" name="nombre" class="form-control" placeholder="Nombre proveedor" onchange="cambio1(this)" onkeyup="cambio1(this)">
+					</div>
+					<div class="form-group col-12 col-lg-6">
+						<input type="text" name="email" class="form-control" placeholder="Email" onchange="cambio3(this)" onkeyup="cambio3(this)">
 					</div>
 				</div>
 			</form>
@@ -76,34 +97,14 @@
 		<div class="col-12 col-lg-12">
 			<form>
 				<div class="form-row">
-					<div class="form-group col-12 col-lg-6">
-						<input type="text" name="" class="form-control" placeholder="Empresa">
-					</div>
-					<div class="form-group col-12 col-lg-6">
-						<input type="text" name="" class="form-control" placeholder="Telefono">
-					</div>
-					<div class="form-group col-12 col-lg-6">
-						<input type="text" name="" class="form-control" placeholder="Nombre proveedor">
-					</div>
-					<div class="form-group col-12 col-lg-6">
-						<input type="text" name="" class="form-control" placeholder="Email">
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-12 col-lg-12">
-			<form>
-				<div class="form-row">
 					<div class="form-group col-12 col-lg-2">
-						<button type="button" class="btn btn-principal2 text-right" data-toggle="modal" data-target="#registrar">Guardar</button>
+						<button type="button" class="btn btn-principal2 text-right" onclick="prov();">Guardar</button>
 					</div>
 					<div class="form-group col-12 col-lg-2">
-						<button type="button" class="btn btn-principal2 text-right" data-toggle="modal" data-target="#Modificar">Modificar</button>
+						<button type="button" class="btn btn-principal2 text-right" onclick="modificar()">Modificar</button>
 					</div>
 					<div class="form-group col-12 col-lg-2">
-						<button type="button" class="btn btn-principal2 text-right" data-toggle="modal" data-target="#eliminar">Eliminar</button>
+						<button type="button" class="btn btn-principal2 text-right" onclick="eliminar()">Eliminar</button>
 					</div>
 				</div>
 			</form>
@@ -111,13 +112,13 @@
 	</div>
 	<div class="row">
 			<div class="col-12">
-				<form>
+				<form name="busc">
 					<div class="form-row">
 						<div class="form-group col-12 col-lg-2 text-right">
-							<input type="text" name="" class="form-control" placeholder="Nombre">
+							<input type="text" name="nombre" class="form-control" placeholder="Nombre" onchange="bnombremo(this)" onkeyup="bnombremo(this)">
 						</div>
 						<div class="form-group col-12 col-lg-2 text-left">
-							<button type="button" class="btn btn-principal2 text-right">Buscar</button>
+							<button type="button" class="btn btn-principal2 text-right" onclick="bnombre()">Buscar</button>
 						</div>
 					</div>
 				</form>
@@ -136,71 +137,27 @@
 			</div>
 		</div>
 </div>
-<!--Modal-->
-            <div class="modal fade" id="registrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Proveedores</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                    <div class="modal-body">
-                      <p>
-                      	proveedor agregado
-                      </p>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-principal2">Aceptar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-<!--Modal-->
-            <div class="modal fade" id="Modificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Proveedores</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                    <div class="modal-body">
-                      <p>
-                      	proveedor modificado
-                      </p>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-principal2">Aceptar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-<!--Modal-->
-            <div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Proveedores</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                    <div class="modal-body">
-                      <p>
-                      	proveedor eliminado
-                      </p>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-principal2">Aceptar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+<div class="container">
+    <br>
+    <br>
+  </div>
+  <footer id="footer" class="pb-4 pt-4">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12 col-lg">
+            <p>Contacto: </p>
+          </div>
+          <div class="col-12 col-lg">
+            <p>Telefono: 346-700-8216</p>
+          </div>
+          <div class="col-12 col-lg">
+            <p>Email: josearmando.mendoza@itsn.edu.mx</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-
+  <script src="proveedores.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

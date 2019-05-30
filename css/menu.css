@@ -4,3 +4,7 @@
 #footer p{
 	color: white;
 }
+#carouselExampleControls img{
+	max-height: 80vh;
+	object-fit: cover;
+}

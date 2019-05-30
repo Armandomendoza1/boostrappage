@@ -6,12 +6,11 @@ function val(){
 		document.for.nombre.focus();
 		return 0;
 	}
-	var s = document.for.sexo.value
-	if (document.for.sexo.value.length == 0 || !letras.test(s)) {
-		alert('Ingresa tu sexo');
+	if (document.for.sexo.selectedIndex==0){
+		alert("Debe seleccionar un sexo.") 
 		document.for.sexo.focus();
 		return 0;
-	}
+		}
 	edad = document.for.edad.value; 
 	edad = validarEntero(edad);
 	document.for.edad.value=edad; 

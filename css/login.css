@@ -1,0 +1,39 @@
+.btn-principal {
+	background-color: black;
+	color: white;
+}
+.btn-principal:hover {
+	background-color: red;
+	color: white;
+}
+
+h1{
+	color: red;
+}
+
+select {
+	background: red;
+	color: white;
+}
+a:hover{
+	text-decoration: none;
+}
+.btn-principal2 {
+	background-color: red;
+	color: white;
+}
+.btn-principal2:hover {
+	background-color: black;
+	color: white;
+}
+table {
+	width: 100%;
+	border-color: red;
+	color: black;
+}
+td {
+	height: 100%;
+	}
+.imagenes{
+	width: 70%;
+}
